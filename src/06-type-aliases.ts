@@ -9,10 +9,46 @@ let point: Point = { x: 10, y: 20 };
 // Type alias for primitives
 type ID = string | number;
 
-let userId: ID = "piyush123";
+let userId: ID = "monu123";
 let productId: ID = 456;
 
 // Type alias vs Interface
+
 // Interfaces can be extended, type aliases cannot
+/*
+interface Animal {
+    name: string;
+}
+
+interface Dog extends Animal {
+    breed: string;
+}
+
+let myDog: Dog = {
+    name: "Buddy",
+    breed: "Golden Retriever",
+};
+*/
+
 // Interfaces can be declared multiple times and will merge
+interface Animal {
+    name: string;
+}
+interface Animal {
+    age: number;
+}
+
+let dog: Animal = {
+    name: "Buddy",
+    age: 3
+};
+
+
 // Use interfaces for object shapes, type aliases for unions/intersections
+
+interface User {
+    name: string;
+    age: number;
+}
+
+type UserId = string | number;
